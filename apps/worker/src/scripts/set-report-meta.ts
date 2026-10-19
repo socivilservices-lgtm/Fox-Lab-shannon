@@ -52,7 +52,7 @@ Output: JSON to stdout with status "success" or "error".`;
 function getFlag(argv: string[], flag: string): string | undefined {
   for (let i = 2; i < argv.length; i++) {
     const value = argv[i + 1];
-    if (argv[i] === flag && value && !value.startsWith('--')) {
+    if (argv[i] === flag && value !== undefined && !value.startsWith('--')) {
       return value;
     }
   }
