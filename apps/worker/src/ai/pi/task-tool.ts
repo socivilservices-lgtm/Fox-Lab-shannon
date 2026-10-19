@@ -6,7 +6,7 @@
 
 /** Generic child-session delegation for the pi harness. */
 
-import { type AssistantMessage, type Model, Type } from '@earendil-works/pi-ai';
+import { type Api, type AssistantMessage, type Model, Type } from '@earendil-works/pi-ai';
 import {
   createAgentSession,
   defineTool,
@@ -23,8 +23,7 @@ import { TraceEmitter } from './trace-emitter.js';
 
 export interface TaskToolContext {
   readonly cwd: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  readonly model: Model<any>;
+  readonly model: Model<Api>;
   readonly modelRuntime: ModelRuntime;
   readonly createResourceLoader: () => Promise<ResourceLoader>;
   readonly parentAgentName: LoggableAgentName;
