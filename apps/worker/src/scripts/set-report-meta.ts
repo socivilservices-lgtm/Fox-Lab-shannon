@@ -51,8 +51,9 @@ Output: JSON to stdout with status "success" or "error".`;
 
 function getFlag(argv: string[], flag: string): string | undefined {
   for (let i = 2; i < argv.length; i++) {
-    if (argv[i] === flag && argv[i + 1] && !argv[i + 1]!.startsWith('--')) {
-      return argv[i + 1]!;
+    const value = argv[i + 1];
+    if (argv[i] === flag && value && !value.startsWith('--')) {
+      return value;
     }
   }
   return undefined;
