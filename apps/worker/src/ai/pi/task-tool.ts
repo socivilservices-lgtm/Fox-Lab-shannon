@@ -23,7 +23,7 @@ import { TraceEmitter } from './trace-emitter.js';
 
 export interface TaskToolContext {
   readonly cwd: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint/suspicious/noExplicitAny: pi's Model type requires a type parameter; the concrete API dialect is resolved per-model at runtime
   readonly model: Model<any>;
   readonly modelRuntime: ModelRuntime;
   readonly createResourceLoader: () => Promise<ResourceLoader>;
